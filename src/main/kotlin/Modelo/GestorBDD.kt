@@ -55,8 +55,6 @@ class GestorBDD {
      */
     fun recuperarEmpleados() {
         ClassControlador().comunicarEmpleadosVista(listaDeEmpleados)
-
-
         //
          escribirLog("Empleados recuperados")
 

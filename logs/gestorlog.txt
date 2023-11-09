@@ -1,3 +1,1 @@
-2023-11-09T18:50:05.970267400: Empleados recuperados
-2023-11-09T18:50:08.933498500: Empleados recuperados
-2023-11-09T18:50:13.632798700: Archivo XML creado del empleado: 0000A
+2023-11-09T23:52:00.077776900: Empleados recuperados
