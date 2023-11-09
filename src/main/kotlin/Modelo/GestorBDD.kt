@@ -6,9 +6,7 @@ import java.sql.Connection
 import java.sql.DriverManager
 import jakarta.xml.bind.*
 import java.io.File
-import java.io.FileWriter
 import java.io.PrintWriter
-import java.sql.Date
 import java.time.LocalDateTime
 
 
@@ -23,7 +21,7 @@ FECHA_NAC VARCHAR2(40));
 val jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe"
 var connection: Connection = DriverManager.getConnection(jdbcUrl,"ADA","ADA")
 lateinit var listaDeEmpleados : MutableList<Empleados>
-var printWriter : PrintWriter = PrintWriter(File("./logs/gestorlog.txt"))
+var printWriterGestor : PrintWriter = PrintWriter(File("./logs/gestorlog.txt"))
 lateinit var date : LocalDateTime
 
 
@@ -161,14 +159,19 @@ class GestorBDD {
        return duplicado
 
     }
+
+    /**
+     * Funcion para escribir log del gestor BDD
+     * @param: msj -> Mensaje que se escribe en el log
+     */
     fun escribirLog(msj:String) {
-        printWriter.println("$date: $msj")
+        printWriterGestor.println("$date: $msj")
     }
     /**
      * Función para cerrar la conexión con la BDD
      */
     fun cerrarBDD() {
         connection.close()
-        printWriter.close()
+        printWriterGestor.close()
     }
 }
