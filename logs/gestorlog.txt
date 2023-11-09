@@ -1,0 +1,2 @@
+2023-11-09T17:59:18.225908800: Empleados recuperados
+2023-11-09T17:59:27.671751500: Empleado modificado: DNI:8888X, Nuevo nombre:MANOLITO, Nueva fecha de nacimiento:151515
