@@ -60,7 +60,7 @@ class GestorBDD {
 
 
         //
-        printWriter.println("$date: Empleados recuperados")
+         escribirLog("Empleados recuperados")
 
     }
 
@@ -75,7 +75,7 @@ class GestorBDD {
             connection.prepareStatement("INSERT INTO EMPLEADOS (DNI,NOMBRE,FECHA_NAC) VALUES ('$DNI','$nombreempleado','$fechanac')").execute()
             Vista().mensajesAMostrar(7)
             //
-            printWriter.println("$date: Empleado agregado: DNI:$DNI, Nombre:$nombreempleado, Fecha de nacimiento:$fechanac")
+            escribirLog("Empleado agregado: DNI:$DNI, Nombre:$nombreempleado, Fecha de nacimiento:$fechanac")
 
         }
         catch (e: Exception) {
@@ -95,7 +95,7 @@ class GestorBDD {
             Vista().mensajesAMostrar(8)
 
             //
-            printWriter.println("$date: Empleado modificado: DNI:$DNI, Nuevo nombre:$nuevonombre, Nueva fecha de nacimiento:$nuevafecha")
+            escribirLog("Empleado modificado: DNI:$DNI, Nuevo nombre:$nuevonombre, Nueva fecha de nacimiento:$nuevafecha")
         }
         catch (e: Exception) {
             Vista().mensajesAMostrar(2)
@@ -112,16 +112,16 @@ class GestorBDD {
             var lineasEliminadas = statement.executeUpdate()
             if (lineasEliminadas>0) {
                 Vista().mensajesAMostrar(3)
-                printWriter.println("$date: Empleado eliminado -> DNI: $DNI")
+                escribirLog("Empleado eliminado -> DNI: $DNI")
             }
             else {
                 Vista().mensajesAMostrar(4)
-                printWriter.println("$date: Intento de eliminación de empleado -> ERR: No se ha encontrado al empleado. No se ha podido eliminar.")
+                escribirLog("Intento de eliminación de empleado -> ERR: No se ha encontrado al empleado. No se ha podido eliminar.")
             }
         }
         catch (e: Exception) {
             Vista().mensajesAMostrar(5)
-            printWriter.println("$date: Intento de eliminación de empleado -> ERR: No se ha podido eliminar el empleado")
+            escribirLog("Intento de eliminación de empleado -> ERR: No se ha podido eliminar el empleado")
         }
     }
 
@@ -140,7 +140,7 @@ class GestorBDD {
             if (i.dni == DNI) {
                 marshaller.marshal(i,archivo)
                 Vista().mensajesAMostrar(6)
-                printWriter.println("$date: Archivo XML creado del empleado: $DNI")
+                escribirLog("Archivo XML creado del empleado: $DNI")
             }
         }
     }
@@ -156,23 +156,14 @@ class GestorBDD {
 
         if (busqueda.next()) {
             duplicado = true
+            escribirLog("Intento fallido de agregación de empleado. DNI repetido.")
         }
        return duplicado
-        /*
-        for (i in listaDeEmpleados) {
-            if (i.dni == dni) {
-                duplicado = true
-                //
-                printWriter.println("$date: Intento fallido de agregación de empleado. DNI repetido.")
-            }
-        }
-        return duplicado
-
-         */
-
 
     }
-
+    fun escribirLog(msj:String) {
+        printWriter.println("$date: $msj")
+    }
     /**
      * Función para cerrar la conexión con la BDD
      */
