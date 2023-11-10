@@ -21,7 +21,7 @@ FECHA_NAC VARCHAR2(40));
 val jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe"
 var connection: Connection = DriverManager.getConnection(jdbcUrl,"ADA","ADA")
 lateinit var listaDeEmpleados : MutableList<Empleados>
-var printWriterGestor : PrintWriter = PrintWriter(File("./logs/gestorlog.txt"))
+var printWriterGestor : PrintWriter = PrintWriter(File("C:\\Users\\AlvaroPC\\IdeaProjects\\SQL\\PersistenciaConSQL\\FacturaciónSql\\ModeloVistaControlador1tabla\\logs\\gestorlog.txt"))
 lateinit var date : LocalDateTime
 
 

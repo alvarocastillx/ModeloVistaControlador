@@ -1,5 +1,6 @@
 package Controlador
 
+
 import Modelo.Empleados
 import Modelo.GestorBDD
 import Vista.Vista
@@ -8,7 +9,7 @@ import java.io.PrintWriter
 import java.time.LocalDateTime
 
 
-var printWriterCntrl : PrintWriter = PrintWriter(File("./logs/gestorcntrl.txt"))
+var printWriterCntrl : PrintWriter = PrintWriter(File("C:\\Users\\AlvaroPC\\IdeaProjects\\SQL\\PersistenciaConSQL\\FacturaciónSql\\ModeloVistaControlador1tabla\\logs\\gestorcntrl.txt"))
 lateinit var date : LocalDateTime
 
 /**
