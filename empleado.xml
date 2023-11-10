@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <empleados>
-    <dni>0000A</dni>
-    <Fechanac>14/04/93</Fechanac>
-    <nombre>JOSELITO</nombre>
+    <dni>1234</dni>
+    <Fechanac>20/3/99</Fechanac>
+    <nombre>JESULIX</nombre>
 </empleados>

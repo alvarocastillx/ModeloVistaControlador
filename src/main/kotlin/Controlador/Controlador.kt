@@ -9,7 +9,7 @@ import java.io.PrintWriter
 import java.time.LocalDateTime
 
 
-var printWriterCntrl : PrintWriter = PrintWriter(File("C:\\Users\\AlvaroPC\\IdeaProjects\\SQL\\PersistenciaConSQL\\FacturaciónSql\\ModeloVistaControlador1tabla\\logs\\gestorcntrl.txt"))
+var printWriterCntrl : PrintWriter = PrintWriter(File("C:\\Users\\AlvaroPC\\IdeaProjects\\SQL\\PersistenciaConSQL\\FacturaciónSql\\ModeloVistaControlador1tabla\\logs\\cntrllog.txt"))
 lateinit var date : LocalDateTime
 
 /**
@@ -68,5 +68,6 @@ class ClassControlador() {
     fun escribirLog(msj:String) {
         date = LocalDateTime.now()
         printWriterCntrl.println("$date: $msj")
+        printWriterCntrl.flush()
     }
 }

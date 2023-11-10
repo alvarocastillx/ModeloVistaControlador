@@ -164,6 +164,8 @@ class GestorBDD {
      */
     fun escribirLog(msj:String) {
         printWriterGestor.println("$date: $msj")
+        printWriterGestor.flush()
+
     }
     /**
      * Función para cerrar la conexión con la BDD
