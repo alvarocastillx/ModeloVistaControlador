@@ -1,6 +1,1 @@
-2023-11-10T20:52:51.018759400: Empleados recuperados
-2023-11-10T20:52:53.144115500: Empleado agregado: DNI:2, Nombre:2, Fecha de nacimiento:2
-2023-11-10T20:52:56.458117500: Empleado modificado: DNI:2, Nuevo nombre:1, Nueva fecha de nacimiento:1
-2023-11-10T20:52:58.407085600: Empleado eliminado -> DNI: 2
-2023-11-10T20:52:59.778400400: Empleados recuperados
-2023-11-10T20:53:01.856960: Archivo XML creado del empleado: 1234
+2023-11-13T19:35:31.137644300 -> Empleados recuperados

@@ -18,6 +18,9 @@ FECHA_NAC VARCHAR2(40));
  */
 
 // INSERT INTO EMPLEADOS (DNI,NOMBRE,FECHA_NAC) VALUES ('0000A','Álvaro Castilla','13/01/2003');
+//cd C:\Users\AlvaroPC\IdeaProjects\SQL\PersistenciaConSQL\FacturaciónSql\ModeloVistaControlador1tabla\out\artifacts\ModeloVistaControlador1tabla_jar
+//java -jar ModeloVistaControlador1tabla.jar
+
 val jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe"
 var connection: Connection = DriverManager.getConnection(jdbcUrl,"ADA","ADA")
 lateinit var listaDeEmpleados : MutableList<Empleados>
@@ -87,7 +90,6 @@ class GestorBDD {
     fun modificarEmpleado(DNI: String,nuevonombre:String,nuevafecha:String) {
         try {
             connection.createStatement().executeQuery("UPDATE EMPLEADOS SET NOMBRE = '$nuevonombre', FECHA_NAC = '$nuevafecha' WHERE DNI = '$DNI'")
-            println(DNI)
             Vista().mensajesAMostrar(8)
 
             //
@@ -163,7 +165,7 @@ class GestorBDD {
      * @param: msj -> Mensaje que se escribe en el log
      */
     fun escribirLog(msj:String) {
-        printWriterGestor.println("$date: $msj")
+        printWriterGestor.println("$date -> $msj")
         printWriterGestor.flush()
 
     }
